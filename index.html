@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark: #1a1a1a;
+            --gold: #c4a128;
+            --red: #8b0000;
+            --gray: #333333;
+            --light-gray: #444444;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .navbar {
+            background-color: var(--dark);
+            padding: 20px 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .navbar-brand span {
+            color: var(--gold);
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+        
+        .hero-section {
+            padding: 100px 0;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid var(--gold);
+            object-fit: cover;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--gold);
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2.5rem;
+        }
+        
+        .btn-custom {
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: #a58922;
+            color: white;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #444;
+            margin: 80px 0;
+        }
+        
+        .about-item {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray); 
+        }
+
+        .about-item:last-child {
+            border-bottom: none; 
+        }
+        
+        .about-icon {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+        
+        .about-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        #about p {
+            font-size: 1.2rem; 
+        }
+
+        .about-item p {
+            font-size: 1.1rem;
+        }
+
+        .skill-card {
+            background-color: var(--gray);
+            border-radius: 8px;
+            padding: 20px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .badge-custom {
+            background-color: var(--gold);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+        
+        .badge-intermediate {
+            background-color: #444;
+        }
+        
+        .badge-familiar {
+            background-color: #555;
+        }
+        
+        .project-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-body {
+            padding: 20px;
+        }
+        
+        .project-title {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .project-badge {
+            background-color: var(--light-gray);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .project-description {
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .project-link {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .project-link:hover {
+            color: var(--gold);
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .contact-email {
+            color: var(--gold);
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--gold);
+        }
+        
+        footer {
+            background-color: #111;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span>Port</span>folio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <img src="images/photo.jpg" alt="Profile Photo" class="profile-img">
+                </div>
+                <div class="col-lg-8">
+                    <h1>Vodlamodi Manish Kumar</h1>
+                    <h2>Student - AI & Full Stack Enthusiast</h2>
+                    <p class="mb-4">
+                        Hi, I'm Vodlamodi Manish Kumar. A passionate student exploring the realms of
+                        Artificial Intelligence and Full Stack Development. I love building innovative solutions
+                        and learning new technologies.
+                    </p>
+                    <p class="mb-4">Let's connect and build something amazing!</p>
+                    <a href="#contact" class="btn btn-custom">Get in Touch <i class="fas fa-envelope ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h3 class="section-title">About Me</h3>
+            
+            <p>
+                Hi, I'm Vodlamodi Manish Kumar — a passionate and driven student with a deep interest in the intersection of 
+                Artificial Intelligence and Full Stack Development. My journey in tech is guided by an insatiable curiosity for 
+                how intelligent systems are built and a strong desire to create applications that are both impactful and intuitive.
+            </p>
+            
+            <div class="about-item mt-5">
+                <h4 class="about-title">
+                    <i class="fas fa-laptop-code about-icon"></i> Front-End Development
+                </h4>
+                <p>
+                    I specialize in crafting clean, responsive, and user-centric interfaces using HTML, CSS, and JavaScript. 
+                    I enjoy translating ideas into functional and visually engaging user experiences. My focus is on building 
+                    seamless UIs that are both aesthetically pleasing and performance-optimized, ensuring a smooth user journey.
+                </p>
+            </div>
+            
+            <div class="about-item">
+                <h4 class="about-title">
+                    <i class="fas fa-server about-icon"></i> Back-End Development
+                </h4>
+                <p>
+                    On the server side, I have hands-on experience with Python, Java, and C. I understand how to design RESTful APIs, 
+                    manage databases, and implement business logic that supports scalable applications. I'm comfortable working with 
+                    backend frameworks and concepts like authentication, CRUD operations, and data structures.
+                </p>
+            </div>
+            
+            <div class="about-item">
+                <h4 class="about-title">
+                    <i class="fas fa-brain about-icon"></i> Artificial Intelligence & Machine Learning
+                </h4>
+                <p>
+                    My growing passion for AI has led me to explore machine learning, data analysis, and model training using Python 
+                    libraries such as NumPy, Pandas, Scikit-learn, and TensorFlow. I'm particularly interested in how AI can be integrated 
+                    into real-world systems — whether it's enhancing user experience, automating decisions, or solving complex problems efficiently.
+                </p>
+            </div>
+            
+            <div class="about-item">
+                <h4 class="about-title">
+                    <i class="fas fa-book-open about-icon"></i> Learning Mindset & Vision
+                </h4>
+                <p>
+                    I believe that continuous learning is key to staying relevant and innovative in tech. I'm always exploring new tools, 
+                    libraries, and frameworks to expand my skill set. Whether it's a new JavaScript library, a deep learning model, or a 
+                    low-level optimization technique in C, I enjoy the process of learning and applying that knowledge to projects.
+                </p>
+            </div>
+            
+            <div class="about-item">
+                <h4 class="about-title">
+                    <i class="fas fa-users about-icon"></i> Collaboration & Goals
+                </h4>
+                <p>
+                    I thrive in collaborative environments and am always eager to work on projects where I can learn from others, 
+                    contribute meaningfully, and build impactful solutions. My long-term goal is to develop intelligent, full-stack 
+                    applications that bridge the gap between user needs and cutting-edge AI technology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h3 class="section-title">My Skillset</h3>
+            
+            <div class="row g-4">
+                <!-- Python -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-python skill-icon"></i>
+                            <h4 class="ms-3 mb-0">Python</h4>
+                        </div>
+                        <span class="badge-custom">Proficient</span>
+                    </div>
+                </div>
+                
+                <!-- Java -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-java skill-icon"></i>
+                            <h4 class="ms-3 mb-0">Java</h4>
+                        </div>
+                        <span class="badge-custom">Proficient</span>
+                    </div>
+                </div>
+                
+                <!-- C Programming -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-code skill-icon"></i>
+                            <h4 class="ms-3 mb-0">C Programming</h4>
+                        </div>
+                        <span class="badge-custom">Proficient</span>
+                    </div>
+                </div>
+                
+                <!-- Data Structures -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-project-diagram skill-icon"></i>
+                            <h4 class="ms-3 mb-0">Data Structures</h4>
+                        </div>
+                        <span class="badge-custom">Proficient</span>
+                    </div>
+                </div>
+                
+                <!-- MySQL -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-database skill-icon"></i>
+                            <h4 class="ms-3 mb-0">MySQL</h4>
+                        </div>
+                        <span class="badge-custom">Proficient</span>
+                    </div>
+                </div>
+                
+                <!-- HTML5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-html5 skill-icon"></i>
+                            <h4 class="ms-3 mb-0">HTML5</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- CSS3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-css3-alt skill-icon"></i>
+                            <h4 class="ms-3 mb-0">CSS3</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-js-square skill-icon"></i>
+                            <h4 class="ms-3 mb-0">JavaScript (ES6+)</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- AI & ML -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-brain skill-icon"></i>
+                            <h4 class="ms-3 mb-0">AI & Machine Learning</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- Full Stack -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-layer-group skill-icon"></i>
+                            <h4 class="ms-3 mb-0">Full Stack Development</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- RESTful APIs -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-exchange-alt skill-icon"></i>
+                            <h4 class="ms-3 mb-0">RESTful APIs</h4>
+                        </div>
+                        <span class="badge-custom badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <!-- React & Next.js -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-react skill-icon"></i>
+                            <h4 class="ms-3 mb-0">React & Next.js</h4>
+                        </div>
+                        <span class="badge-custom badge-familiar">Familiar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h3 class="section-title">Featured Projects</h3>
+            
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="images/Team-Connect.png" alt="Team Connect" class="project-img">
+                        <div class="project-body">
+                            <h4 class="project-title">Team Connect - Empowering Remote Collaboration</h4>
+                            <div>
+                                <span class="project-badge">HTML</span>
+                                <span class="project-badge">CSS</span>
+                                <span class="project-badge">JavaScript</span>
+                                <span class="project-badge">Bootstrap</span>
+                                <span class="project-badge">Python</span>
+                                <span class="project-badge">AI</span>
+                                <span class="project-badge">Full Stack</span>
+                                <span class="project-badge">Flask</span>
+                                <span class="project-badge">MySQL</span>
+                                <span class="project-badge">WebRTC</span>
+                                <span class="project-badge">WebSockets</span>
+                            </div>
+                            <p class="project-description">
+                                A web-based collaboration platform enabling real-time chat, video calls, task management, and file sharing. It features admin and user roles, with an integrated AI assistant to streamline teamwork and productivity.
+                            </p>
+                            <div>
+                                <a href="https://team-connect.onrender.com/" class="project-link" target="_blank"><i class="fas fa-desktop me-1"></i> Live Demo</a>
+                                <a href="https://github.com/V-Manish-Kumar/Team-connect" class="project-link" target="_blank"><i class="fab fa-github me-1"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="images/Drug-Discovery.png" alt="Drug Discovery Platform" class="project-img">
+                        <div class="project-body">
+                            <h4 class="project-title">Accelerating Drug Discovery using AI</h4>
+                            <div>
+                                <span class="project-badge">HTML</span>
+                                <span class="project-badge">CSS</span>
+                                <span class="project-badge">JavaScript</span>
+                                <span class="project-badge">Bootstrap</span>
+                                <span class="project-badge">Python</span>
+                                <span class="project-badge">Flask</span>
+                                <span class="project-badge">AI</span>
+                            </div>
+                            <p class="project-description">
+                                a powerful platform that accelerates medicine development by generating and analyzing potential drug candidates using AI. It predicts drug properties, identifies drugs from images, and reduces time, cost, and risk in pharmaceutical research.
+                            </p>
+                            <div>
+                                <a href="https://accelerating-drug-discovery-using-ai.onrender.com/" class="project-link" target="_blank"><i class="fas fa-desktop me-1" target="_blank"></i> Live Demo</a>
+                                <a href="https://github.com/V-Manish-Kumar/Accelerating-Drug-Discovery-using-AI" class="project-link" target="_blank"><i class="fab fa-github me-1" target="_blank"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="images/Maze-Game.png" alt="Maze Game" class="project-img">
+                        <div class="project-body">
+                            <h4 class="project-title">Maze Game</h4>
+                            <div>
+                                <span class="project-badge">HTML</span>
+                                <span class="project-badge">CSS</span>
+                                <span class="project-badge">JavaScript</span>
+                                <span class="project-badge">A* Algorithm</span>
+                            </div>
+                            <p class="project-description">
+                                The Maze Game uses the A* algorithm to intelligently navigate and solve complex mazes. It combines pathfinding efficiency with interactive gameplay for an engaging and educational experience.
+                            </p>
+                            <div>
+                                <a href="https://v-manish-kumar.github.io/Maze-Game/" class="project-link" target="_blank"><i class="fas fa-desktop me-1"></i> Live Demo</a>
+                                <a href="https://github.com/V-Manish-Kumar/Maze-Game" class="project-link" target="_blank"><i class="fab fa-github me-1"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h3 class="section-title">Let's Connect</h3>
+            
+            <p class="contact-text">
+                I'm eager to learn and collaborate on exciting projects in AI or Full Stack Development. 
+                Feel free to reach out!
+            </p>
+            
+            <a href="mailto:manishedu980@gmail.com" class="contact-email">
+                <i class="fas fa-envelope me-2"></i>manishedu980@gmail.com
+            </a>
+            
+            <div class="social-links">
+                <a href="https://github.com/V-Manish-Kumar" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                
+                <a href="https://www.linkedin.com/in/manish-kumar-9bb7032a0/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/maniboy_23?igsh=Y2UxajJuZTRqZGE3" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Vodlamodi Manish Kumar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add active class to nav items on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(navItem => {
+                    navItem.classList.remove('active');
+                    if (navItem.getAttribute('href').substring(1) === current) {
+                        navItem.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after click
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
