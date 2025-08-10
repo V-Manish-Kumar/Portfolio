@@ -9,6 +9,9 @@ You can view Demo at https://portfolio-gray-phi-83.vercel.app/
 
 In the project directory, you can run:
 
+### `npm install
+install all the neccessary Node modeules
+
 ### `npm start`
 
 Runs the app in the development mode.\
