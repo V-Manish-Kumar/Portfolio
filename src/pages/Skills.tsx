@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
 import DevicesIcon from '@mui/icons-material/Devices';
 
@@ -96,10 +95,34 @@ const Skills: React.FC = () => {
   ];
 
   const certifications = [
-    'Salesforce Developer with Agentblazer Champion Program - SmartBridge',
-    'Google: Machine Learning Operations (MLOps) for Generative AI',
-    'TechGyan at BITS Pilani: AI & Ethical Hacking Workshop',
-    'W3Schools: Certified in C# Programming',
+    {
+      name: 'W3Schools: Certified in C# Programming',
+      link: 'https://www.coursera.org/account/accomplishments/verify/MBPJRHFZQ4AU',
+    },
+    {
+      name: 'Unity Essentials',
+      link: 'https://www.credly.com/badges/e8e68424-b685-4ecd-9320-cdedc893237a/linked_in_profile',
+    },
+    {
+      name: 'Google: Machine Learning Operations (MLOps) for Generative AI',
+      link: 'https://www.cloudskillsboost.google/public_profiles/4a1472cd-92c3-42cb-982c-ada09de4e668/badges/16065226',
+    },
+    {
+      name: 'Artificial Intelligence Fundamentals - IBM',
+      link: 'https://www.credly.com/badges/159d748c-1491-430c-85dc-b030e039c545/linked_in_profile',
+    },
+    {
+      name: '📢 GitHub Copilot Ask/Edit/Agent, Prompt Engg, Vibe Coding, AI Applications',
+      link: 'https://globalai.community/badges/da953c4a-4adb-49dd-96a6-c5954782c04b/',
+    },
+    {
+      name: 'Salesforce Developer with Agentblazer Champion Program - SmartBridge',
+      link: 'https://drive.google.com/file/d/1fsq9x69JitZWlUYocxJ-wdmQv__y4QnZ/view',
+    },
+    {
+      name: 'TechGyan at BITS Pilani: AI & Ethical Hacking Workshop',
+      link: 'https://drive.google.com/file/d/1jiQpsGRyddXKaWNrd7pDSHmyh1J9VRf1/view?usp=drivesdk',
+    },
   ];
 
   const containerVariants = {
@@ -270,13 +293,17 @@ const Skills: React.FC = () => {
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center' }}>
                 {certifications.map((cert, index) => (
                   <motion.div
-                    key={cert}
+                    key={cert.name}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1 + index * 0.1 }}
                   >
                     <Chip
-                      label={cert}
+                      component="a"
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      label={cert.name}
                       sx={{
                         backgroundColor: 'rgba(100, 181, 246, 0.1)',
                         color: 'primary.main',
@@ -285,6 +312,8 @@ const Skills: React.FC = () => {
                         fontSize: '0.9rem',
                         padding: '8px 16px',
                         height: 'auto',
+                        cursor: 'pointer',
+                        textDecoration: 'none',
                         '&:hover': {
                           backgroundColor: 'rgba(100, 181, 246, 0.2)',
                           transform: 'scale(1.05)',
