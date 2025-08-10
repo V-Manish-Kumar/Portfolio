@@ -2,7 +2,6 @@
   "name": "portfolio-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://V-Manish-Kumar.github.io/Portfolio_React",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -53,3 +52,4 @@
     ]
   }
 }
+
