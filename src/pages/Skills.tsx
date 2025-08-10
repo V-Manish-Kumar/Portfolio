@@ -120,6 +120,10 @@ const Skills: React.FC = () => {
       link: 'https://drive.google.com/file/d/1fsq9x69JitZWlUYocxJ-wdmQv__y4QnZ/view',
     },
     {
+      name: 'Machine Learning I - Colombia+',
+      link: 'https://badges.plus.columbia.edu/8681f608-8b78-4e22-b6ff-7bd126b2857b#acc.WQmAhVl5',
+    },
+    {
       name: 'TechGyan at BITS Pilani: AI & Ethical Hacking Workshop',
       link: 'https://drive.google.com/file/d/1jiQpsGRyddXKaWNrd7pDSHmyh1J9VRf1/view?usp=drivesdk',
     },
@@ -363,3 +367,4 @@ const Skills: React.FC = () => {
 };
 
 export default Skills;
+
