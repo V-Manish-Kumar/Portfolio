@@ -128,7 +128,7 @@ const Experience: React.FC = () => {
     {
       id: 7,
       type: 'achievement',
-      title: 'Colobia University: Certified in Machine Learning I',
+      title: 'Colombia University: Certified in Machine Learning I',
       company: 'Colombia+',
       location: 'Online',
       period: '2025',
@@ -419,3 +419,4 @@ const Experience: React.FC = () => {
 };
 
 export default Experience;
+
