@@ -128,6 +128,21 @@ const Experience: React.FC = () => {
     {
       id: 7,
       type: 'achievement',
+      title: 'Colobia University: Certified in Machine Learning I',
+      company: 'Colombia+',
+      location: 'Online',
+      period: '2025',
+      description: [
+        'Achieved certification in Machine Learning I',
+        'Demonstrated proficiency in Regression Analysis and Classification Techniques',
+        'Completed comprehensive assessment covering Machine Learning fundamentals and advanced topics',
+        'Applied Machine Learning knowledge in various programming projects',
+      ],
+      technologies: ['Python', 'Machine Learning', 'Data Science', 'AI/ML'],
+    },
+    {
+      id: 8,
+      type: 'achievement',
       title: 'W3Schools: Certified in C# Programming',
       company: 'W3Schools',
       location: 'Online',
